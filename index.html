@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ML Web App</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <h1>Aplicación de Machine Learning</h1>
+  <input type="file" id="fileInput" accept=".csv">
+  <br><br>
+  <label for="modelSelect">Seleccionar Modelo:</label>
+  <select id="modelSelect">
+    <option value="regression">Regresión</option>
+    <option value="classification">Clasificación</option>
+  </select>
+  <br><br>
+  <label for="trainPercent">Porcentaje de entrenamiento:</label>
+  <input type="number" id="trainPercent" min="1" max="99" value="80">
+  <br><br>
+  <button id="trainButton">Entrenar</button>
+  <button id="predictButton">Predecir</button>
+  <button id="showGraphButton">Mostrar Gráfica</button>
+
+  <script src="js/main.js"></script>
+  <script src="js/tytus.js"></script>
+</body>
+</html>
