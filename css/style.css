@@ -1,6 +1,10 @@
 body {
   font-family: Arial, sans-serif;
   margin: 20px;
+  background-image: url('image.png'); 
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 button {

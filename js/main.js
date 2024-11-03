@@ -72,7 +72,6 @@ document.getElementById('fileInput').addEventListener('change', function (event)
       const data = parseCSV(text);
       console.log('Datos cargados:', data);
 
-      //window.dataset = data.map(row => row.map(Number));
       window.dataset = data;
     };
     reader.readAsText(file);
@@ -108,8 +107,59 @@ const trendChat = (trendData) => {
 
   const options = {
     title: 'Tendencia de Datos',
-    hAxis: { title: 'X' },
-    vAxis: { title: 'Y' },
+    series: {
+      0: {
+        type: 'scatter',
+        pointShape: 'triangle',
+        pointSize: 7,
+        color: '#fd0606'
+      },
+      1: {
+        type: 'line',
+        color: '#33ff42',
+        lineWidth: 3
+      }
+    },
+    hAxis: {
+      title: 'X',
+      titleTextStyle: {
+        color: '#333',
+        fontSize: 16,
+        bold: true
+      },
+      textStyle: {
+        color: '#555',
+        fontSize: 12
+      },
+      gridlines: {
+        color: '#000000', // Color de las líneas de la cuadrícula
+        count: 10 // Número de líneas de cuadrícula
+      }
+    },
+    vAxis: {
+      title: 'Y',
+      titleTextStyle: {
+        color: '#333',
+        fontSize: 16,
+        bold: true
+      },
+      textStyle: {
+        color: '#555',
+        fontSize: 12
+      },
+      gridlines: {
+        color: '#000000',
+        count: 10
+      }
+    },
+    backgroundColor: '#b6ffe2', // Color de fondo del gráfico
+    legend: {
+      position: 'top',
+      textStyle: {
+        color: '#444',
+        fontSize: 14
+      }
+    },
     legend: 'none',
     trendlines: { 0: { type: 'linear', lineWidth: 3, opacity: 0.9 } }
   };
@@ -128,6 +178,7 @@ const patternChart = (ptData) => {
     title: 'Patron de Datos',
     hAxis: { title: 'X' },
     vAxis: { title: 'Y' },
+    backgroundColor: '#b6ffe2',
     legend: 'none'
   };
 
