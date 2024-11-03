@@ -2,28 +2,45 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ML Web App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <title>Proyecto 2</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-  <h1>Aplicación de Machine Learning</h1>
-  <input type="file" id="fileInput" accept=".csv">
-  <br><br>
-  <label for="modelSelect">Seleccionar Modelo:</label>
-  <select id="modelSelect">
-    <option value="regression">Regresión</option>
-    <option value="classification">Clasificación</option>
-  </select>
-  <br><br>
-  <label for="trainPercent">Porcentaje de entrenamiento:</label>
-  <input type="number" id="trainPercent" min="1" max="99" value="80">
-  <br><br>
-  <button id="trainButton">Entrenar</button>
-  <button id="predictButton">Predecir</button>
-  <button id="showGraphButton">Mostrar Gráfica</button>
+  <h1>IA PROYECTO 2 - 201901807</h1>
+  
+  <div class="container">
+    <div class="column">
+      <input type="file" id="fileInput" accept=".csv">
+      <br>
+      <br>
+        <label for="modelSelect">Seleccionar Modelo:</label>
+        <select id="modelSelect">
+            <option value="lineal">Lineal</option>
+            <option value="polinomial">Polinomial</option>
+            <option value="tree">Árbol</option>
+        </select>
+        <br><br>
+        <label for="trainPercent">Parámetros (grado)</label>
+        <input type="number" id="parametro" min="2" max="5" value="2">
+        <br><br>
+        <button id="trainButton">Entrenar</button>
+        <button id="predictButton">Predecir</button>
+        <button id="tendenceButton">Tendencia</button>
+        <button id="patternButton">Patrones</button>        
+        <div id="result"></div>
+    </div>
+    <div class="column">
+        <div id="resultsChart" style="width: 100%; height: 500px;"></div>
+    </div>
+
 
   <script src="js/main.js"></script>
   <script src="js/tytus.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis-network.min.js"></script>
+   
 </body>
+
 </html>
